@@ -7,20 +7,21 @@
   
   <body>
     <script>
-      // todos (Not an array, 30%) (undefined)
-      var todos = ['Item 1', 'Item 2', 'Item 3'];
-      // todos (An array with 3 items, 70%) (An array with 3 items)
+      var todos = [
+        {todoText: 'Item 1', completed: false}, 
+        {todoText: 'Item 2', completed: false}, 
+        {todoText: 'Item 3', completed: false},
+      ];
 
       console.log(todos);
-      // (an array will be logged to the console, 95%) (an array will be logged to the console)
 
-      function add(item) {
-        todos.push(item);
+      function add(initialTodoText) {
+        todos.push({todoText: initialTodoText, completed: false});
         console.log(todos);
       }
 
-      function edit(position, newValue) {
-        todos[position] = newValue;
+      function edit(position, newTodoText) {
+        todos[position].todoText = newTodoText;
         console.log(todos);
       }
 

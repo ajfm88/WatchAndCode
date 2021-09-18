@@ -1,3 +1,11 @@
+Version 4
+[ ] It should have a function to toggle a todo.
+
+Version 3
+[x] We should initialize the todos variables with objects.
+[x] The add function should add objects.
+[x] The edit function should edit objects.
+
 Version 2
 [x] It should have a function to add a todo
 [x] It should have a function to edit a todo
