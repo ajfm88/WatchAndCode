@@ -6,6 +6,8 @@
   </head>
   
   <body>
+    <button id='display-todos-button'>Display Todos</button>
+    <button id='toggle-all-button'>Toggle All</button>
     <script>
       var todos = [
         {todoText: 'Item 1', completed: false}, 
@@ -68,32 +70,11 @@
         displayTodos();
       }
 
-      function weirdToggleAll() {
-        var completedTodos = 0;
-        var allCompleted = true;
+      var displayTodosButton = document.getElementById('display-todos-button');
+      displayTodosButton.addEventListener('click', displayTodos);
 
-        for (var i = 0; i < todos.length; i++) {
-          if (todos[i].completed !== false) {
-            completedTodos++;
-          }
-
-          if (completedTodos !== i + 1) {
-            allCompleted = false;
-          }
-        }
-
-        if (allCompleted === true) {
-          for (var i = 0; i < todos.length; i++) {
-            todos[i].completed = false;
-          }
-        } else {
-          for (var i = 0; i < todos.length; i++) {
-            todos[i].completed = true;  
-          }
-        }
-
-        displayTodos();
-      }
+      var toggleAllButton = document.getElementById('toggle-all-button');
+      toggleAllButton.addEventListener('click', toggleAll);
     </script>
   </body>
 </html>
