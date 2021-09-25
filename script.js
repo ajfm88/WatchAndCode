@@ -73,3 +73,28 @@ experiment6
 // var experiment4 = demoFunctionThatReturnsAString();	==> 'a string'
 // var experiment5 = demoFunctionThatReturnsUndefined;	==> demoFunctionThatReturnsUndefined
 // var experiment6 = demoFunctionThatReturnsUndefined();==> undefined
+
+
+
+function demoFunctionThatReturnsAString() {
+  return 'a string';
+}
+
+function logThis(thing) {
+  console.log(thing);
+}
+
+
+// Experiment 7
+logThis(demoFunctionThatReturnsAString);
+// ƒ demoFunctionThatReturnsAString() {
+//   return 'a string';
+// }
+
+// Experiment 8
+logThis(demoFunctionThatReturnsAString());
+// a string
+
+// key points:
+// * returns inserts a value where the function was called.
+// * Not using return is the same thing as having return undefined.
