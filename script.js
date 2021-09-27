@@ -98,3 +98,10 @@ logThis(demoFunctionThatReturnsAString());
 // key points:
 // * returns inserts a value where the function was called.
 // * Not using return is the same thing as having return undefined.
+
+// Takes the UL element
+var todoListUL = document.getElementById('todo-list-ul');
+
+// Creates a new LI inside the UL element dynamically.
+var testLi = document.createElement('li');
+todoListUL.appendChild(testLi);
