@@ -12,8 +12,6 @@
     <button id='edit-button'>Edit</button>
     <input id='edit-position-input'>
     <input id='edit-text-input'>
-    <button id='toggle-button'>Toggle</button>
-    <input id='toggle-input'>
 
     <ul id='todos-ul'>
     </ul>
@@ -44,20 +42,20 @@
       }
 
       function remove(event) {
-        var position = event.currentTarget.id;
+        var position = event.currentTarget.id.split('-')[1];
         todos.splice(position, 1);
         displayTodos();
       }
 
-      function toggle() {
-        var position = toggleInput.value;
+      function toggle(event) {
+        var position = event.currentTarget.id.split('-')[1];
+
         if (todos[position].completed === false) {
           todos[position].completed = true;
         } else {
           todos[position].completed = false;
         }
 
-        toggleInput.value = '';
         displayTodos();
       }
 
@@ -77,8 +75,14 @@
           var removeButton = document.createElement('button');
           removeButton.innerText = 'Remove';
           removeButton.addEventListener('click', remove);
-          removeButton.id = i;
+          removeButton.id = 'remove-' + i;
 
+          var toggleButton = document.createElement('button');
+          toggleButton.innerText = 'Toggle';
+          toggleButton.addEventListener('click', toggle);
+          toggleButton.id = 'toggle-' + i;
+
+          todoLi.appendChild(toggleButton);
           todoLi.appendChild(removeButton);
           todosUl.appendChild(todoLi);
         }
@@ -119,10 +123,6 @@
       var editPositionInput = document.getElementById('edit-position-input');
       var editTextInput = document.getElementById('edit-text-input');
       editButton.addEventListener('click', edit);
-
-      var toggleButton = document.getElementById('toggle-button');
-      var toggleInput = document.getElementById('toggle-input');
-      toggleButton.addEventListener('click', toggle);
     </script>
   </body>
 </html>

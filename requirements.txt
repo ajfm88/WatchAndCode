@@ -1,3 +1,7 @@
+Version 11
+[x] Each todo should have its own toggle button.
+[x] The toggle buttons should actually work.
+
 Version 10
 [x] Each todo should have its own todo button.
 [x] The remove buttons should actually work.
